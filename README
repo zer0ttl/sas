@@ -2,7 +2,7 @@ Part - I : Setting up the ETH blockchain and contract on your local machine
 
 1. Download ganache from https://github.com/trufflesuite/ganache/releases for your OS.
 
-2. Run the ganache application.
+2. Run the ganache application. The RPC server should be running at 127.0.0.1:8545. If it is running on a different port you can change the settings by clicking on the settings icon on the top right side. We will need this RPC server IP address and port at a later stage.
 
 3. Go to http://remix.ethereum.org/ and copy the contents of contract.sol to the online editor.
 
