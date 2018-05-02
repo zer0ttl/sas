@@ -46,8 +46,12 @@ Python 3.5.2
  * Debugger is active!
 
 7. You can now visit http://127.0.0.1:5000/ to access the application. If everything went well the front page will show a Block Number.
-Go to http://127.0.0.1:5000/get to get the infromation stored in the blockchain
-Go to http://127.0.0.1:5000/set/<NAME>/<AGE> to set the information in the blockchain
 
 
+Part - III : Testing the application and exploring
 
+1. Go to http://127.0.0.1:5000/get to get the infromation stored in the blockchain
+
+2. Go to http://127.0.0.1:5000/set/<NAME>/<AGE> to set the information in the blockchain
+
+3. Checkout BLOCKS, TRANSACTIONS, LOGS tabs of the Ganache application for all the transactions that you have made.
