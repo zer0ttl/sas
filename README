@@ -1,0 +1,53 @@
+Part - I : Setting up the ETH blockchain and contract on your local machine
+
+1. Download ganache from https://github.com/trufflesuite/ganache/releases for your OS.
+
+2. Run the ganache application.
+
+3. Go to http://remix.ethereum.org/ and copy the contents of contract.sol to the online editor.
+
+4. Click on the run tab on right side of the editor and under Environment select Web3 provider. A confirmation alert will pop up, click on OK. You will be asked to enter the Web3 Endpoint in the next screen. Input http://localhost:8545 and click on OK. The online editor should now be connected to the local instance of ETH blockchain running through Ganache.
+
+5. Click on Create. This will deploy the contract to blockchain. Copy the address at which the contract was created and paste it into app.py
+
+
+Part - II : Setting up the Flask Application
+
+1. Clone the repository in a directory of your choice.
+home: $ mkdir poc
+home/poc: $ cd poc
+home/poc: $ poc git clone https://github.com/zer0ttl/loyalty-points-poc.git
+
+2. Create a virtual environment for the project.
+home/poc: virtualenv --python=python3.5 venv
+
+3. Activate the virtual environment for the project.
+home/poc: $ source venv/bin/activate
+(venv) home/poc: $ python --version
+Python 3.5.2
+
+4. Install the dependencies for the poc namely web3 and flask
+(venv) home/poc: $ pip3 install web3
+(venv) home/poc: $ pip3 install flask
+
+5. Set environment variables for flask application and debug settings
+(venv) home/poc: $ export FLASK_APP=app.py
+(venv) home/poc: $ export FLASK_DEBUG=True
+
+6. Run the flask application
+(venv) home/poc: $ flask run
+ * Serving Flask app "app.py" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+
+7. You can now visit http://127.0.0.1:5000/ to access the application. If everything went well the front page will show a Block Number.
+Go to http://127.0.0.1:5000/get to get the infromation stored in the blockchain
+Go to http://127.0.0.1:5000/set/<NAME>/<AGE> to set the information in the blockchain
+
+
+
