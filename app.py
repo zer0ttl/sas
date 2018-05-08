@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template
 from web3.auto import w3
 from web3 import Web3, HTTPProvider
 import json
@@ -19,12 +19,11 @@ contract = web3.eth.contract(address=eipAddress, abi=abi)
 
 @app.route("/")
 def index():
-    a = web3.eth.blockNumber
+    block_number = web3.eth.blockNumber
     if not web3.isConnected:
-        output = "Not Connected to Blockchain! Please try again."
-    output = "<h1>Block number : {}</h1><hr>".format(a)
-    # <h3><a href=''>Get</a><br><a href='{{ url_for('get') }}'>Set</a></h3>
-    return output
+        info = "Not Connected to blockchain! Please try again."
+    info = "Connected to blockchain!"
+    return render_template('index.html', title='Home', block_number=block_number, info=info)
 
 
 @app.route("/get")
@@ -32,9 +31,9 @@ def get():
     instructor = contract.functions.getInfo().call()
     name = instructor[0]
     age = instructor[1]
-    estimatedGas = contract.functions.getInfo().estimateGas()
+    estimated_gas = contract.functions.getInfo().estimateGas()
     output = "<h1>Instructor Name : {} <br>Instructor Age : {}</h1><hr><h3>Estimated Gas required : {}</h3>".format(
-        name, age, estimatedGas)
+        name, age, estimated_gas)
     return output
 
 
