@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Set Details{% endblock title %}
+
+{% block content %}
+<h1>Set Details</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.instructor_name.label }}<br>
+        {{ form.instructor_name(size=32) }}
+    </p>
+    <p>
+        {{ form.instructor_age.label }}<br>
+        {{ form.instructor_age(size=32) }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

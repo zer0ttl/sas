@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% block title %}Welcome{% endblock title %}
-{% block body %}
-<h1>Block number : {{ block_number }}</h1><hr>
+{% block content %}
+<h1>Loyalty Points PoC</h1>
+<p class="lead">This is a proof of concept application created on ethereum blockchain<br>to demonstrate an ecosystem of
+    loyalty points for an unnamed retail chain.</p>
+<hr>
+<h2>Block number : {{ block_number }}</h2>
+<hr>
 <h4>Status : {{ info }}</h4>
-{% endblock body %}
+{% endblock content %}
