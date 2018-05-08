@@ -3,5 +3,7 @@
 {% block content %}
 <h1>Instructor Name : {{ instructor.name }} <br>Instructor Age : {{ instructor.age}}</h1>
 <hr>
-<h3>Estimated Gas required : {{ instructor.estimated_gas }}</h3>
+<div class="alert alert-info" role="alert">
+    <h3>Estimated Gas spent : {{ instructor.estimated_gas }}</h3>
+</div>
 {% endblock content %}
