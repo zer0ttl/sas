@@ -33,8 +33,9 @@ def get():
     estimated_gas = contract.functions.balanceOf(acc_addr).estimateGas()
     tx_hash = contract.functions.balanceOf(acc_addr).transact({'from': w3.eth.accounts[0]})
     tx_receipt = web3.eth.getTransactionReceipt(tx_hash)
+    account_number = "User #" + str(account+1)
     data = {
-        "account": acc_addr,
+        "account": account_number,
         "balance": acc_bal,
         "gas": estimated_gas,
         "tx_receipt": tx_receipt,
