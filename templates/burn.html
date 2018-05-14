@@ -3,12 +3,12 @@
 {% block title %}Set Details{% endblock title %}
 
 {% block content %}
-<h1>Transfer Tokens</h1>
+<h1>Redeem Tokens</h1>
 <form action="" method="post">
     {{ form.hidden_tag() }}
     <p>
-        {{ form.to_account.label }}<br>
-        {{ form.to_account(size=32) }}
+        {{ form.from_account.label }}<br>
+        {{ form.from_account(size=32) }}
     </p>
     <p>
         {{ form.amount.label }}<br>

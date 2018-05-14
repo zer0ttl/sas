@@ -4,6 +4,12 @@ from wtforms.validators import DataRequired
 
 
 class SetForm(FlaskForm):
-    instructor_name = StringField('Instructor Name', validators=[DataRequired()])
-    instructor_age = IntegerField('Instructor Age', validators=[DataRequired()])
+    to_account = StringField('To Account', validators=[DataRequired()])
+    amount = IntegerField('Token Amount', validators=[DataRequired()])
+    submit = SubmitField('Update Details')
+
+
+class BurnForm(FlaskForm):
+    from_account = StringField('From Account', validators=[DataRequired()])
+    amount = IntegerField('Token Amount', validators=[DataRequired()])
     submit = SubmitField('Update Details')
