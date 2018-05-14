@@ -26,6 +26,13 @@ def index():
 
 @app.route("/get")
 def get():
+    """
+
+    :return:
+    This function returns the account balance for the account number passed in the url.
+    ?account=1
+    default account is #1
+    """
     account = request.args.get('account', default=1, type=int)
     account = account - 1
     acc_addr = w3.eth.accounts[account]
@@ -45,6 +52,12 @@ def get():
 
 @app.route("/set", methods=["GET", "POST"])
 def set():
+    """
+
+    :return:
+    This function is used to deposit tokens into an account.
+    Destination account is passed to the function using a form. 'Amount' of tokens is also passed in the form.
+    """
     if request.method == "POST":
         to_account = int(request.values.get('to_account'))
         account = w3.eth.accounts[to_account - 1]
@@ -62,8 +75,14 @@ def set():
         return render_template('set.html', title="Set Details", form=form)
 
 
+
 @app.route("/redeem", methods=["GET", "POST"])
 def burn():
+    """
+
+    :return:
+    function to redeem points. This function burns token from the account passed in the form.
+    """
     if request.method == "POST":
         from_account = int(request.values.get('from_account'))
         account = w3.eth.accounts[from_account - 1]
