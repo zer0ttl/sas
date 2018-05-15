@@ -75,7 +75,6 @@ def set():
         return render_template('set.html', title="Set Details", form=form)
 
 
-
 @app.route("/redeem", methods=["GET", "POST"])
 def burn():
     """
